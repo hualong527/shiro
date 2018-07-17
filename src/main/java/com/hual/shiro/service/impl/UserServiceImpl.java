@@ -1,7 +1,5 @@
 package com.hual.shiro.service.impl;
 
-import com.hual.shiro.datasources.DataSourceContextHolder;
-import com.hual.shiro.datasources.DataSourceType;
 import com.hual.shiro.mapper.RoleMapper;
 import com.hual.shiro.mapper.UserMapper;
 import com.hual.shiro.mapper.UsrRoleRelationMapper;
@@ -34,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAllUsers() {
-        DataSourceContextHolder.setDataSourceType(DataSourceType.ds1);
+        //DataSourceContextHolder.setDataSourceType(DataSourceType.ds1);
         return userMapper.selectAllUsers();
     }
 
@@ -47,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Role> findAllRolesById(int id){
-        DataSourceContextHolder.setDataSourceType(DataSourceType.ds1);
+        //DataSourceContextHolder.setDataSourceType(DataSourceType.ds1);
         List<UsrRoleRelation> usrRoleRelations = roleRelationMapper.selectAllRolesByUsrId(id);
         List<Role> roles = new ArrayList<>();
         for(UsrRoleRelation usrRoleRelation:usrRoleRelations){

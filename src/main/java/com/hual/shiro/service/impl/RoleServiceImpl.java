@@ -1,7 +1,5 @@
 package com.hual.shiro.service.impl;
 
-import com.hual.shiro.datasources.DataSourceContextHolder;
-import com.hual.shiro.datasources.DataSourceType;
 import com.hual.shiro.mapper.*;
 import com.hual.shiro.po.*;
 import com.hual.shiro.service.RoleService;
@@ -27,7 +25,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public List<Privilege> findAllPrivilegesById(int id){
-        DataSourceContextHolder.setDataSourceType(DataSourceType.ds1);
+        //DataSourceContextHolder.setDataSourceType(DataSourceType.ds1);
         List<RolePrgRelation> rolePrgRelations = rolePrgRelationMapper.selectAllPrgByRoleId(id);
         List<Privilege> privileges = new ArrayList<>();
         for(RolePrgRelation rolePrgRelation:rolePrgRelations){

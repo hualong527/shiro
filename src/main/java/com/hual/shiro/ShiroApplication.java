@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication//(exclude = DataSourceAutoConfiguration.class)
+@MapperScan(basePackages = "com.hual.shiro.mapper")
 public class ShiroApplication {
 
 	public static void main(String[] args) {

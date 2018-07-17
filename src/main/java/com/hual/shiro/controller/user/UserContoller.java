@@ -16,14 +16,14 @@ public class UserContoller {
     private UserService userService;
 
     @RequestMapping("/all")
-    @RequiresPermissions("userInfo:add")//权限管理;
+    //@RequiresPermissions("userInfo:add")//权限管理;
     public String findAllUser(Map<String,Object> map){
         map.put("users",userService.findAllUsers());
         return "allUsers";
     }
 
     @RequestMapping("/add")
-    @RequiresPermissions("userInfo:add")//权限管理;
+    //@RequiresPermissions("userInfo:add")//权限管理;
     public String login(){
         return "login";
     }
